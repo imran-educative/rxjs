@@ -1,0 +1,17 @@
+<div class="col-xs-2">
+  <div class="col-xs-6">
+    <img [src]="patient.avatar"/>
+  </div>
+  <div class="col-xs-6">
+    <span>{{ patient.firstName }} {{ patient.lastName }}</span>
+    <br>
+    <span>Ward: {{patient.currentWard}}</span>
+
+    <hr>
+    <button (click)="showChangeWard()">Change Ward</button>
+    <select (change)="updateWard($event.target.value)" ngClass="{{changeWardClass}}">
+      <option disabled>--- Choose One ---</option>
+      <option *ngFor="let ward of patientData.wardTypes" value="{{ward}}">{{ ward }}</option>
+    </select>
+  </div>
+</div>

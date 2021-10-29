@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row text-center">
+    <h1>Saved Photos</h1>
+  </div>
+  <div class="row results">
+    <!-- START: saved-list -->
+    <div *ngFor="let photo of savedPhotos$ | async" class="result-container">
+      <img [src]="photo.url" class="results-img" />
+      <button class="btn btn-default results-btn" 
+        routerLink="/edit/{{ photo.id }}">Edit</button>
+    </div>
+    <!-- END: saved-list -->
+  </div>
+</div>

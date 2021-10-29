@@ -1,0 +1,40 @@
+<div *ngIf="photo$ | async as photo">
+  <div class="row">
+    <div class="col-xs-2 col-xs-offset-5">
+      <img class="photo-detail img-rounded" [src]="photo.url">
+    </div>
+  </div>
+
+  <!-- START: tag-input -->
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <div class="input-group">
+        <input [(ngModel)]="tagInput" type="text" class="form-control" 
+          placeholder="Input Tag">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" 
+            (click)="addTag(photo)">Add Tag</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <!-- END: tag-input -->
+  <!-- START: tag-display -->
+  <div class="row" *ngIf="photo.tags.length">
+    <div class="col-xs-4 col-xs-offset-4">
+      Tags:
+      <ul>
+        <li *ngFor="let tag of photo.tags">{{ tag }}</li>
+      </ul>
+    </div>
+  </div>
+  <!-- END: tag-display -->
+  <!-- START: save-btn -->
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <button class="btn btn-success" 
+        (click)="photos.savePhoto(photo)">Save</button>
+    </div>
+  </div>
+  <!-- END: save-btn -->
+</div>

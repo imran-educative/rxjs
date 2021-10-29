@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="text-center row">
+    <h1>
+      Patient Management
+    </h1>
+  </div>
+  <!-- pre-generated rows, slow -->
+  <app-patient-row *ngFor="let pRow of patientData.patientsByRow" [patientRowData]="pRow"></app-patient-row>
+
+  <!-- Rows in CSS, fast updates -->
+  <!-- <app-patient-display *ngFor="let patient of patientData.patients" [patient]="patient"></app-patient-display> -->
+</div>

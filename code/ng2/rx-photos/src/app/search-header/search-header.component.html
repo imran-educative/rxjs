@@ -1,0 +1,20 @@
+<!-- START: header -->
+<header>
+  <div class="search-container">
+    <input class="search" placeholder="Search..." 
+    	autofocus [formControl]="searchQuery">
+  </div>
+</header>
+<!-- END: header -->
+<!-- START: routing -->
+<div class="container">
+  <div class="row center-text">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" 
+      	routerLink="/">Search Photos</button>
+      <button type="button" class="btn btn-default" 
+      	routerLink="/savedphotos">My Saved Photos</button>
+    </div>
+  </div>
+</div>
+<!-- END: routing -->

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+  <div class="text-center row">
+    <h1>
+      Patient Management
+    </h1>
+  </div>
+  <!-- START: row -->
+  <app-patient-display
+    *ngFor="let patient of patients$ | async"
+    [patient]="patient"
+  ></app-patient-display>
+  <!-- END: row -->
+</div>

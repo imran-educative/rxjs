@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-xs-2">
+    <label for="phoneNum">Phone Number:</label>
+  </div>
+  <div class="col-xs-10">
+    <!-- START: validation -->
+    <input [formControl]="phoneNumber" />
+    <!-- <callout id="co.reactiveForms.phone0" /> -->
+    <div *ngIf="phoneNumber.invalid">
+      <!-- <callout id="co.reactiveForms.phone1" /> -->
+      <div *ngIf="(phoneNumber.dirty || phoneNumber.touched)">
+        <!-- <callout id="co.reactiveForms.phone2" /> -->
+        <div *ngIf="phoneNumber.errors.tooLong">
+          There's too many digits in your phone number!
+          You entered {{ phoneNumber.errors.tooLong.numDigits }} 
+              digits (required: 10)
+        </div>
+        <div *ngIf="phoneNumber.errors.tooShort">
+          Your phone number is too short!
+          You entered {{ phoneNumber.errors.tooShort.numDigits }} 
+              digits (required: 10)
+        </div>
+      </div>
+    </div>
+    <!-- END: validation -->
+  </div>
+</div>

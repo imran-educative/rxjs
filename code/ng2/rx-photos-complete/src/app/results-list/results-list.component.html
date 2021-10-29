@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row text-center">
+    <h1>Search Results</h1>
+  </div>
+  <div class="row results">
+    <div
+      *ngFor="let photoUrl of photosService.latestPhotos | async"
+      class="result-container"
+      >
+      <img [src]="photoUrl" alt="" class="results-img"/>
+      <!-- START: save-btn -->
+      <button class="btn btn-default results-btn"
+        (click)="photosService.addNewPhoto(photoUrl)">Save</button>
+      <!-- END: save-btn -->
+    </div>
+  </div>
+</div>
